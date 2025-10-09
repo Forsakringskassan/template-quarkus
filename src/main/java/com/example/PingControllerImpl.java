@@ -7,11 +7,13 @@ import se.fk.gradle.examples.jaxrsspec.controllers.generatedsource.PingControlle
 
 @ApplicationScoped
 @Path("/api/ping")
-public class PingControllerImpl implements PingControllerApi {
+public class PingControllerImpl implements PingControllerApi
+{
 
-    @Override
-    public PingResponse apiPingGet() {
-        return new PingResponse()
-        		.pong(true);
-    }
+   @Override
+   public PingResponse apiPingGet()
+   {
+      return new PingResponse()
+            .pong(true);
+   }
 }
