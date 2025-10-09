@@ -7,14 +7,16 @@ import static io.restassured.RestAssured.given;
 import static org.hamcrest.CoreMatchers.is;
 
 @QuarkusTest
-class PingControllerTest {
-    @Test
-    void testPingEndpoint() {
-        given()
-          .when().get("/api/ping")
-          .then()
-             .statusCode(200)
-             .body(is("{\"pong\":true}"));
-    }
+class PingControllerTest
+{
+   @Test
+   void testPingEndpoint()
+   {
+      given()
+            .when().get("/api/ping")
+            .then()
+            .statusCode(200)
+            .body(is("{\"pong\":true}"));
+   }
 
 }
