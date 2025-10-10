@@ -5,7 +5,7 @@
   <parent>
     <groupId>se.fk.maven</groupId>
     <artifactId>fk-maven-parent</artifactId>
-    <version>1.2.2</version>
+    <version>1.5.0</version>
   </parent>
 
   <groupId>com.example</groupId>
@@ -72,14 +72,17 @@
       <url>https://repo.maven.apache.org/maven2</url>
     </repository>
     <repository>
-      <id>github--Forsakringskassan--fk-maven</id>
-      <url>https://maven.pkg.github.com/Forsakringskassan/fk-maven</url>
-    </repository>
-    <repository>
-      <id>github--Forsakringskassan--template-api</id>
-      <url>https://maven.pkg.github.com/Forsakringskassan/template-api</url>
+      <id>github--Forsakringskassan--repository</id>
+      <url>https://maven.pkg.github.com/Forsakringskassan/repository</url>
     </repository>
   </repositories>
+
+  <pluginRepositories>
+    <pluginRepository>
+      <id>github--Forsakringskassan--repository</id>
+      <url>https://maven.pkg.github.com/Forsakringskassan/repository</url>
+    </pluginRepository>
+  </pluginRepositories>
 
   <build>
     <plugins>
