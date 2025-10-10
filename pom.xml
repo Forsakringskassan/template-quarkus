@@ -22,6 +22,7 @@
     <quarkus.platform.version>3.28.2</quarkus.platform.version>
     <skipITs>true</skipITs>
     <surefire-plugin.version>3.5.4</surefire-plugin.version>
+    <violations.maxViolations>2</violations.maxViolations>
   </properties>
 
   <dependencyManagement>

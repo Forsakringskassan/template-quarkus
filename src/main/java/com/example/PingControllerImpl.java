@@ -10,9 +10,12 @@ import se.fk.gradle.examples.jaxrsspec.controllers.generatedsource.PingControlle
 public class PingControllerImpl implements PingControllerApi
 {
 
+   public boolean result;
+
    @Override
    public PingResponse apiPingGet()
    {
+      System.out.println("Ping received");
       return new PingResponse()
             .pong(true);
    }
