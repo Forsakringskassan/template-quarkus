@@ -2,19 +2,18 @@ package com.example;
 
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.ws.rs.Path;
+import se.fk.gradle.examples.jaxrsspec.controllers.generatedsource.FullmaktsControllerApi;
 import se.fk.gradle.examples.jaxrsspec.controllers.generatedsource.model.Alternative;
 import se.fk.gradle.examples.jaxrsspec.controllers.generatedsource.model.AlternativesResponse;
 import se.fk.gradle.examples.jaxrsspec.controllers.generatedsource.model.OmbudRequest;
 import se.fk.gradle.examples.jaxrsspec.controllers.generatedsource.model.OmbudResponse;
-import se.fk.gradle.examples.jaxrsspec.controllers.generatedsource.FullmaktsControllerApi;
 
 @ApplicationScoped
-@Path("/api")
+@Path("/api/template")
 public class FullmaktsControllerApiImpl implements FullmaktsControllerApi
 {
-
    @Override
-   public AlternativesResponse apiAlternativesGet()
+   public AlternativesResponse getAlternatives()
    {
       return new AlternativesResponse()
             .addAlternativesItem(new Alternative().id("1").name("Alt 1"))
@@ -22,8 +21,9 @@ public class FullmaktsControllerApiImpl implements FullmaktsControllerApi
    }
 
    @Override
-   public OmbudResponse apiOmbudPut(OmbudRequest ombudRequest)
+   public OmbudResponse checkOmbud(OmbudRequest ombudRequest)
    {
+
       return new OmbudResponse()
             .name("Namnet");
    }

@@ -5,7 +5,6 @@ import org.junit.jupiter.api.Test;
 
 import static io.restassured.RestAssured.given;
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.hamcrest.CoreMatchers.is;
 
 @QuarkusTest
 class FullmaktsControllerTest
@@ -14,7 +13,7 @@ class FullmaktsControllerTest
    void testAlternatives()
    {
       String actualResponse = given()
-            .when().get("/api/alternatives")
+            .when().get("/api/template/alternatives")
             .then()
             .statusCode(200)
             .extract()
