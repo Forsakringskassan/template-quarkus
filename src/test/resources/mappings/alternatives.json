@@ -1,0 +1,24 @@
+{
+  "request": {
+    "method": "GET",
+    "urlPath": "/someFullmaktsImplementation/api/template/alternatives"
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "jsonBody": {
+      "alternatives": [
+        {
+          "id": "1",
+          "name": "Alt 1"
+        },
+        {
+          "id": "2", 
+          "name": "Alt 2"
+        }
+      ]
+    }
+  }
+}

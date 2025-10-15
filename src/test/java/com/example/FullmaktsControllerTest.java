@@ -36,4 +36,27 @@ class FullmaktsControllerTest
             """);
    }
 
+   @Test
+   void testCheckOmbud()
+   {
+      String actualResponse = given()
+            .contentType("application/json")
+            .body("""
+                  {
+                      "personnummer": "123456789012"
+                  }
+                  """)
+            .when().put("/api/template/ombud")
+            .then()
+            .statusCode(200)
+            .extract()
+            .body()
+            .asString();
+
+      assertThat(actualResponse).isEqualToIgnoringWhitespace("""
+            {
+                "name": "Test Testsson"
+            }
+            """);
+   }
 }
