@@ -3,13 +3,18 @@
   "extends": [
     "local>Forsakringskassan/renovate-config"
   ],
-    "packageRules": [
-        {
-          "description": "Internal FK Maven packages",
-          "matchDatasources": ["maven"],
-          "matchPackagePrefixes": ["se.fk."],
-          "registryUrls": ["https://maven.pkg.github.com/Forsakringskassan/*"]
-        }
-    ]
+  "packageRules": [
+    {
+      "description": "Internal FK Maven packages",
+      "matchDatasources": [
+        "maven"
+      ],
+      "registryUrls": [
+        "https://maven.pkg.github.com/Forsakringskassan/*"
+      ],
+      "matchPackageNames": [
+        "se.fk.{/,}**"
+      ]
+    }
+  ]
 }
-
