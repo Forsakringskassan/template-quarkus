@@ -5,16 +5,10 @@
   ],
   "packageRules": [
     {
-      "description": "Internal FK Maven packages",
-      "matchDatasources": [
-        "maven"
-      ],
-      "registryUrls": [
-        "https://maven.pkg.github.com/Forsakringskassan/*"
-      ],
-      "matchPackageNames": [
-        "se.fk.{/,}**"
-      ]
+      "description": "Public FK Maven packages on GitHub Packages",
+      "matchDatasources": ["maven"],
+      "matchPackagePatterns": ["^se\\.fk\\."],
+      "registryUrls": ["https://maven.pkg.github.com/Forsakringskassan/"]
     }
   ]
 }
