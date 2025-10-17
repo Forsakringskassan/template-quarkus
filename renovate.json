@@ -10,7 +10,7 @@
         "maven"
       ],
       "registryUrls": [
-        "https://maven.pkg.github.com/Forsakringskassan/"
+        "https://maven.pkg.github.com/Forsakringskassan/repository"
       ],
       "matchPackageNames": [
         "/^se\\.fk\\./"
