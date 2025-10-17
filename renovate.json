@@ -3,6 +3,14 @@
   "extends": [
     "local>Forsakringskassan/renovate-config"
   ],
+    "hostRules": [
+        {
+            "hostType": "maven",
+            "matchHost": "maven.pkg.github.com",
+            "username": "${PACKAGES_RW_ACTOR}",
+            "password": "${PACKAGES_RW_TOKEN}"
+        }
+    ],
   "packageRules": [
     {
       "description": "Internal FK Maven packages",
