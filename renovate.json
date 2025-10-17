@@ -2,6 +2,14 @@
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
     "local>Forsakringskassan/renovate-config"
-  ]
+  ],
+    "packageRules": [
+        {
+          "description": "Internal FK Maven packages",
+          "matchDatasources": ["maven"],
+          "matchPackagePrefixes": ["se.fk."],
+          "registryUrls": ["https://maven.pkg.github.com/Forsakringskassan/*"]
+        }
+    ]
 }
 
