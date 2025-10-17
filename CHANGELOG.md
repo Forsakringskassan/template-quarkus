@@ -2,6 +2,12 @@
 
 Changelog of template-quarkus.
 
+## 0.1.2 (2025-10-17)
+
+### Bug Fixes
+
+-  triggar version ([f51b8](https://github.com/Forsakringskassan/template-quarkus/commit/f51b8b28581c1f7) Tomas Bjerre)  
+
 ## 0.1.1 (2025-10-17)
 
 ## 0.1.0 (2025-10-17)
