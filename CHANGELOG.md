@@ -2,7 +2,7 @@
 
 Changelog of template-quarkus.
 
-## 0.1.4 (2025-10-17)
+## 0.1.4 (2025-10-18)
 
 ### Bug Fixes
 
