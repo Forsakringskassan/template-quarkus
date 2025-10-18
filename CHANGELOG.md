@@ -2,6 +2,12 @@
 
 Changelog of template-quarkus.
 
+## 0.1.4 (2025-10-17)
+
+### Bug Fixes
+
+-  **deps**  update quarkus.platform.version to v3.28.3 ([17bc6](https://github.com/Forsakringskassan/template-quarkus/commit/17bc67d3b89ebe4) renovate[bot])  
+
 ## 0.1.3 (2025-10-17)
 
 ### Bug Fixes
