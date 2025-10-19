@@ -2,6 +2,12 @@
 
 Changelog of template-quarkus.
 
+## 0.1.6 (2025-10-19)
+
+### Bug Fixes
+
+-  **deps**  update dependency org.immutables:value to v2.11.6 ([a4ca7](https://github.com/Forsakringskassan/template-quarkus/commit/a4ca7333e18ff07) renovate[bot])  
+
 ## 0.1.5 (2025-10-18)
 
 ### Bug Fixes
