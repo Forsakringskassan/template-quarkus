@@ -2,6 +2,18 @@
 
 Changelog of template-quarkus.
 
+## 0.1.7 (2025-10-21)
+
+### Bug Fixes
+
+-  **deps**  update dependency se.fk.maven:fk-maven-parent to v1.7.0 ([6e6c6](https://github.com/Forsakringskassan/template-quarkus/commit/6e6c6cb449a8757) renovate[bot])  
+-  **deps**  update quarkus.platform.version to v3.28.4 ([b3ce4](https://github.com/Forsakringskassan/template-quarkus/commit/b3ce45b8bd6935f) renovate[bot])  
+-  **deps**  update dependency se.fk.gradle.examples:example-jaxrs-spec to v1.10.1 ([7e108](https://github.com/Forsakringskassan/template-quarkus/commit/7e108aaa912d3b5) renovate[bot])  
+-  **deps**  update dependency se.fk.maven:fk-maven-parent to v1.6.4 (#9) ([5f222](https://github.com/Forsakringskassan/template-quarkus/commit/5f222bf2fb56c51) forsakringskassan[bot])  
+
+### Dependency updates
+
+- add renovate.json ([1ee8a](https://github.com/Forsakringskassan/template-quarkus/commit/1ee8a40f1067279) renovate[bot])  
 ## 0.1.6 (2025-10-19)
 
 ### Bug Fixes
@@ -64,12 +76,6 @@ Changelog of template-quarkus.
 
 [a1a68](https://github.com/Forsakringskassan/template-quarkus/commit/a1a6889f2581fd8) Tomas Bjerre *2025-10-17 08:59:42*
 
-**Merge pull request #5 from Forsakringskassan/renovate/migrate-config**
-
-* chore(config): migrate renovate config 
-
-[b5da8](https://github.com/Forsakringskassan/template-quarkus/commit/b5da89e47187811) Tomas Bjerre *2025-10-17 08:52:55*
-
 **Update package rules for FK Maven packages**
 
 
@@ -79,12 +85,6 @@ Changelog of template-quarkus.
 
 
 [d485f](https://github.com/Forsakringskassan/template-quarkus/commit/d485ffb81db3e76) Tomas Bjerre *2025-10-17 08:46:21*
-
-**Merge pull request #4 from Forsakringskassan/renovate/migrate-config**
-
-* chore(config): migrate renovate config 
-
-[e1c22](https://github.com/Forsakringskassan/template-quarkus/commit/e1c2292fbf81b44) Tomas Bjerre *2025-10-17 08:19:10*
 
 **Merge branch 'feature/parent'**
 
