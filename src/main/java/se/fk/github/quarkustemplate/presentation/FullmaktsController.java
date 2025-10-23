@@ -8,6 +8,7 @@ import se.fk.gradle.examples.jaxrsspec.controllers.generatedsource.FullmaktsCont
 import se.fk.gradle.examples.jaxrsspec.controllers.generatedsource.model.AlternativesResponse;
 import se.fk.gradle.examples.jaxrsspec.controllers.generatedsource.model.OmbudRequest;
 import se.fk.gradle.examples.jaxrsspec.controllers.generatedsource.model.OmbudResponse;
+import org.slf4j.LoggerFactory;
 
 @ApplicationScoped
 @Path("/api/template")
@@ -23,6 +24,7 @@ public class FullmaktsController implements FullmaktsControllerApi
    @Override
    public AlternativesResponse getAlternatives()
    {
+      LoggerFactory.getLogger(FullmaktsController.class).info("alternatives");
       var logicAlternatives = fullmaktsService.getAlternatives();
       var presentationDto = presentationMapper.toPresentation(logicAlternatives);
       return presentationMapper.toExternalApi(presentationDto);
