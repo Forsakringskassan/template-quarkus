@@ -1,13 +1,14 @@
-package com.example;
+package tests;
 
+import common.TestDataFactory;
 import io.quarkus.test.junit.QuarkusTest;
 import jakarta.inject.Inject;
 import org.junit.jupiter.api.Test;
 import se.fk.github.quarkustemplate.integration.IntegrationService;
+import se.fk.github.quarkustemplate.integration.dto.ImmutableIntegrationOmbudRequest;
 import se.fk.github.quarkustemplate.integration.dto.IntegrationAlternativesResponse;
 import se.fk.github.quarkustemplate.integration.dto.IntegrationOmbudRequest;
 import se.fk.github.quarkustemplate.integration.dto.IntegrationOmbudResponse;
-import se.fk.github.quarkustemplate.integration.dto.ImmutableIntegrationOmbudRequest;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -35,7 +36,7 @@ class IntegrationTest
    void testCheckOmbud()
    {
       IntegrationOmbudRequest request = ImmutableIntegrationOmbudRequest.builder()
-            .personnummer("123456789012")
+            .personnummer(TestDataFactory.PNR1)
             .build();
 
       IntegrationOmbudResponse response = fullmaktsIntegration.checkOmbud(request);
