@@ -4,8 +4,8 @@
 
   <parent>
     <groupId>se.fk.maven</groupId>
-    <artifactId>fk-maven-parent</artifactId>
-    <version>1.7.0</version>
+    <artifactId>fk-maven-quarkus-parent</artifactId>
+    <version>1.9.0</version>
   </parent>
 
   <groupId>com.example</groupId>
@@ -13,44 +13,11 @@
   <version>0.1.2</version>
 
   <properties>
-    <compiler-plugin.version>3.14.1</compiler-plugin.version>
-    <maven.compiler.release>21</maven.compiler.release>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-    <quarkus.platform.artifact-id>quarkus-bom</quarkus.platform.artifact-id>
-    <quarkus.platform.group-id>io.quarkus.platform</quarkus.platform.group-id>
-    <quarkus.platform.version>3.28.4</quarkus.platform.version>
-    <skipITs>true</skipITs>
-    <surefire-plugin.version>3.5.4</surefire-plugin.version>
-    <!-- Should be 0, is here to show how usage -->
-    <violations.maxViolations>1</violations.maxViolations>
+    <!-- Should be 0, is here to show how to use it -->
+    <violations.maxViolations>2</violations.maxViolations>
   </properties>
 
-  <dependencyManagement>
-    <dependencies>
-      <dependency>
-        <groupId>${quarkus.platform.group-id}</groupId>
-        <artifactId>${quarkus.platform.artifact-id}</artifactId>
-        <version>${quarkus.platform.version}</version>
-        <type>pom</type>
-        <scope>import</scope>
-      </dependency>
-    </dependencies>
-  </dependencyManagement>
-
   <dependencies>
-    <dependency>
-      <groupId>io.quarkus</groupId>
-      <artifactId>quarkus-arc</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>io.quarkus</groupId>
-      <artifactId>quarkus-rest</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>io.quarkus</groupId>
-      <artifactId>quarkus-rest-jackson</artifactId>
-    </dependency>
     <dependency>
       <groupId>se.fk.gradle.examples</groupId>
       <artifactId>example-jaxrs-spec</artifactId>
@@ -60,36 +27,6 @@
       <groupId>se.fk.github.jaxrsclientfactory</groupId>
       <artifactId>jaxrs-client-factory</artifactId>
       <version>1.0.0</version>
-    </dependency>
-    <dependency>
-      <groupId>org.immutables</groupId>
-      <artifactId>value</artifactId>
-      <version>2.11.6</version>
-      <scope>provided</scope>
-    </dependency>
-
-    <!-- test dependencies -->
-    <dependency>
-      <groupId>io.quarkus</groupId>
-      <artifactId>quarkus-junit5</artifactId>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
-      <groupId>io.rest-assured</groupId>
-      <artifactId>rest-assured</artifactId>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.assertj</groupId>
-      <artifactId>assertj-core</artifactId>
-      <version>3.27.6</version>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
-      <groupId>io.quarkiverse.wiremock</groupId>
-      <artifactId>quarkus-wiremock</artifactId>
-      <version>1.5.1</version>
-      <scope>test</scope>
     </dependency>
   </dependencies>
 
@@ -103,83 +40,4 @@
       <url>https://maven.pkg.github.com/Forsakringskassan/repository</url>
     </repository>
   </repositories>
-
-  <pluginRepositories>
-    <pluginRepository>
-      <id>github--Forsakringskassan--repository</id>
-      <url>https://maven.pkg.github.com/Forsakringskassan/repository</url>
-    </pluginRepository>
-  </pluginRepositories>
-
-  <build>
-    <plugins>
-      <plugin>
-        <groupId>${quarkus.platform.group-id}</groupId>
-        <artifactId>quarkus-maven-plugin</artifactId>
-        <version>${quarkus.platform.version}</version>
-        <extensions>true</extensions>
-        <executions>
-          <execution>
-            <goals>
-              <goal>build</goal>
-              <goal>generate-code</goal>
-              <goal>generate-code-tests</goal>
-              <goal>native-image-agent</goal>
-            </goals>
-          </execution>
-        </executions>
-      </plugin>
-      <plugin>
-        <artifactId>maven-compiler-plugin</artifactId>
-        <version>${compiler-plugin.version}</version>
-        <configuration>
-          <parameters>true</parameters>
-          <useIncrementalCompilation>false</useIncrementalCompilation>
-          <annotationProcessorPaths>
-            <path>
-              <groupId>org.immutables</groupId>
-              <artifactId>value</artifactId>
-              <version>2.11.6</version>
-            </path>
-          </annotationProcessorPaths>
-          <compilerArgs>
-            <arg>-verbose</arg>
-            <arg>-XprintRounds</arg>
-            <arg>-XprintProcessorInfo</arg>
-            <arg>-Xlint</arg>
-            <arg>-J-verbose</arg>
-          </compilerArgs>
-        </configuration>
-      </plugin>
-      <plugin>
-        <artifactId>maven-surefire-plugin</artifactId>
-        <version>${surefire-plugin.version}</version>
-        <configuration>
-          <systemPropertyVariables>
-            <java.util.logging.manager>org.jboss.logmanager.LogManager</java.util.logging.manager>
-            <maven.home>${maven.home}</maven.home>
-          </systemPropertyVariables>
-        </configuration>
-      </plugin>
-      <plugin>
-        <artifactId>maven-failsafe-plugin</artifactId>
-        <version>${surefire-plugin.version}</version>
-        <configuration>
-          <systemPropertyVariables>
-            <native.image.path>${project.build.directory}/${project.build.finalName}-runner</native.image.path>
-            <java.util.logging.manager>org.jboss.logmanager.LogManager</java.util.logging.manager>
-            <maven.home>${maven.home}</maven.home>
-          </systemPropertyVariables>
-        </configuration>
-        <executions>
-          <execution>
-            <goals>
-              <goal>integration-test</goal>
-              <goal>verify</goal>
-            </goals>
-          </execution>
-        </executions>
-      </plugin>
-    </plugins>
-  </build>
 </project>

@@ -11,7 +11,6 @@ import java.util.Collections;
 @ApplicationScoped
 public class IntegrationMapper
 {
-
    public IntegrationAlternativesResponse fromExternalApi(AlternativesResponse externalResponse)
    {
       if (externalResponse.getAlternatives() == null)
