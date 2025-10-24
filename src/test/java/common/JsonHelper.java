@@ -56,6 +56,13 @@ public final class JsonHelper
 
    public static <T> T fromJson(String from, Class<T> t) throws Exception
    {
-      return new ObjectMapper().readValue(from, t);
+      try
+      {
+         return new ObjectMapper().readValue(from, t);
+      }
+      catch (JsonProcessingException e)
+      {
+         throw new RuntimeException(from, e);
+      }
    }
 }
