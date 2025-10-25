@@ -9,8 +9,9 @@ import jakarta.inject.Inject;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
-import se.fk.github.quarkustemplate.presentation.ExampleKafkaReceiver;
-import se.fk.github.quarkustemplate.integration.ExampleKafkaSender;
+import se.fk.github.quarkustemplate.integration.ExampleKafka;
+import se.fk.gradle.examples.asyncapi.ExempelRtfRequestPayload;
+import se.fk.gradle.examples.asyncapi.ExempelRtfResponsePayload;
 
 @QuarkusTestResource(InMemoryKafkaResource.class)
 public class KafkaTestBase
@@ -20,13 +21,10 @@ public class KafkaTestBase
    public InMemoryConnector connector;
 
    @Inject
-   public ExampleKafkaSender sender;
+   public ExampleKafka exampleKafka;
 
-   @Inject
-   public ExampleKafkaReceiver receiver;
-
-   public InMemorySource<String> inMemorySource;
-   public InMemorySink<String> inMemorySink;
+   public InMemorySource<ExempelRtfRequestPayload> inMemorySource;
+   public InMemorySink<ExempelRtfResponsePayload> inMemorySink;
 
    @BeforeEach
    void setUp()
@@ -34,7 +32,7 @@ public class KafkaTestBase
       inMemorySource = connector.source("exempel-rtf-requests");
       inMemorySink = connector.sink("exempel-rtf-responses");
       inMemorySink.clear();
-      receiver.resetCounter();
+      exampleKafka.resetCounter();
    }
 
    @AfterEach

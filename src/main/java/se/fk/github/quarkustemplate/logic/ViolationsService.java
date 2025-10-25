@@ -12,7 +12,6 @@ public class ViolationsService
       String a = null;
       try
       {
-         System.out.println("This will never print");
          Scanner scanner = new Scanner(System.in);
          String input = scanner.next();
          "".concat(input);

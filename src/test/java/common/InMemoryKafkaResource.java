@@ -13,6 +13,7 @@ public class InMemoryKafkaResource implements QuarkusTestResourceLifecycleManage
    {
       Map<String, String> config = new HashMap<>();
       config.put("mp.messaging.incoming.exempel-rtf-requests.connector", "smallrye-in-memory");
+      config.put("mp.messaging.outgoing.exempel-rtf-responses.connector", "smallrye-in-memory");
       return config;
    }
 
