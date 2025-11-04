@@ -9,7 +9,8 @@ import jakarta.inject.Inject;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
-import se.fk.github.quarkustemplate.integration.ExampleKafka;
+
+import se.fk.github.quarkustemplate.presentation.ExampleKafka;
 import se.fk.gradle.examples.asyncapi.ExempelRtfRequestPayload;
 import se.fk.gradle.examples.asyncapi.ExempelRtfResponsePayload;
 

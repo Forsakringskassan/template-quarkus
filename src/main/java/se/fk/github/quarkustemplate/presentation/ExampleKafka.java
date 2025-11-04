@@ -1,4 +1,4 @@
-package se.fk.github.quarkustemplate.integration;
+package se.fk.github.quarkustemplate.presentation;
 
 import jakarta.enterprise.context.ApplicationScoped;
 import org.eclipse.microprofile.reactive.messaging.Incoming;
